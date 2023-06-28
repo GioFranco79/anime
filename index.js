@@ -28,7 +28,8 @@ app.get('/', (request, response) => {
 
 app.get('/agregar', (request, response) => {
     response.render('agregar', {
-        titulo: 'Agregar animé'
+        titulo: 'Agregar animé',
+        error: null
     });
 });
 
@@ -36,13 +37,21 @@ app.post('/mostraragregar', (req, response) => {
     const miAnime = animeService.readf();
     const id = parseInt(req.body.indice);
     const añitos = parseInt(req.body.año);
-    const dato = new Anime(id, req.body.nombre, req.body.genero, añitos, req.body.autor);
-    miAnime.push(dato);
-    animeService.writef(miAnime);
-    response.render('lista', {
-        titulo: 'Mostrando animé agregado',
-        arrayAnime: miAnime
-    });
+    const index = buscar(id, miAnime);
+    if (index < 0) {
+        const dato = new Anime(id, req.body.nombre, req.body.genero, añitos, req.body.autor);
+        miAnime.push(dato);
+        animeService.writef(miAnime);
+        response.render('lista', {
+            titulo: 'Mostrando animé agregado',
+            arrayAnime: miAnime
+        });
+    } else {
+        response.render('agregar', {
+            titulo: 'Agregar animé',
+            error: 'Error!!!! El Id no debe existir.'
+        });
+    }
 });
 
 app.get('/lista', (request, response) => {
@@ -88,8 +97,8 @@ app.post('/modificando', (req, response) => {
 
 app.post('/modificado', (req, response) => {
     const miAnime = animeService.readf();
-    const index = buscar(parseInt(req.body.iden), miAnime);   
-    const añitos = parseInt(req.body.año);    
+    const index = buscar(parseInt(req.body.iden), miAnime);
+    const añitos = parseInt(req.body.año);
     miAnime[index].nombre = req.body.nombre;
     miAnime[index].genero = req.body.genero;
     miAnime[index].año = añitos;

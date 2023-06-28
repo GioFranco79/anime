@@ -32,7 +32,7 @@
 "6": {
     "nombre": "Mazinger Z",
     "genero": "Mechas",
-    "año": "1976",
+    "año": "1972",
     "autor": "Go Nagai"
 },
 "7": {
@@ -40,5 +40,11 @@
     "genero": "Shonen",
     "año": "2016",
     "autor": "Koyoharu Gotouge"
+},
+"8": {
+    "nombre": "Love stage",
+    "genero": "Yaoi",
+    "año": "2017",
+    "autor": "Eiki Eiki"
 }
 }

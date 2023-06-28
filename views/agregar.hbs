@@ -12,7 +12,12 @@
 <body>
     {{!-- Navbar --}}
     {{> navbar}}
-    <section class="container">
+    {{#if error}}
+    <section class="col-12 bg-danger"> 
+        <p class="text-warning text-center">{{error}}</p>
+    </section>
+    {{/if}}
+    <section class="container">     
         <form action="mostraragregar" method="post" name="fagrega">
              <div class="mb-3">
                 <label for="indice" class="form-label">Id</label>
