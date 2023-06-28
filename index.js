@@ -22,7 +22,7 @@ hbs.registerPartials(__dirname + '/views/partials');
 
 app.get('/', (request, response) => {
     response.render('home', {
-        titulo: 'Home'
+        titulo: 'Animé'
     });
 });
 
