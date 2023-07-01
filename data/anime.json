@@ -31,7 +31,7 @@
 },
 "6": {
     "nombre": "Mazinger Z",
-    "genero": "Mechas",
+    "genero": "Mecha",
     "año": "1972",
     "autor": "Go Nagai"
 },
@@ -49,8 +49,20 @@
 },
 "9": {
     "nombre": "Card Captor Sakura",
-    "genero": "Shoujo",
+    "genero": "Shojo",
     "año": "2000",
     "autor": "Clamp"
+},
+"10": {
+    "nombre": "One piece",
+    "genero": "Shonen",
+    "año": "1999",
+    "autor": "Eiichirō Oda"
+},
+"11": {
+    "nombre": "Shulitron",
+    "genero": "Mecha",
+    "año": "2011",
+    "autor": "Gabol Franco"
 }
 }
